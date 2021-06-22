@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Better 24 Game</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  >
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="movement">
+    <div class="buttons">
+
+    </div>
+    <div class="buttons">
+      <button onclick="redo()">
+        <i class="fas fa-redo"></i>
+      </button>
+      <button onclick="next()">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="win"></div>
+  
+	<div class="page-container">
+		<div class="goal-num-container">
+			<div class="goal-num-text">GOAL NUMBER</div>
+			<input class="goal-num" type="number" min="1" max="99" onchange="changeGoalNum(event)"></input>
+		</div>
+    <div class="crumb-trail-container">
+      <div class="crumb-header">Crumb Trail: </div>
+		  <div class="crumb-trail"></div>
+    </div>
+		<div class="number-btn-container">
+			<button class="num-btn active-nb" onclick="chooseNum(event, 0)">#</button>
+        <button class="num-btn active-nb" onclick="chooseNum(event, 1)">#</button>
+        <button class="num-btn active-nb" onclick="chooseNum(event, 2)">#</button>
+        <button class="num-btn active-nb" onclick="chooseNum(event, 3)">#</button>
+        <div>=</div>
+        <div class="current-result">0</div>
+      </div>
+      <div class="arithmetic-btn-container">
+        <div class="arith-btns">
+          <button class="arithmetic-btn" onclick="currentOprtn = 'add'">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="arithmetic-btn" onclick="currentOprtn = 'sub'">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button class="arithmetic-btn" onclick="currentOprtn = 'mul'">
+            <i class="fas fa-times"></i>
+          </button>
+          <button class="arithmetic-btn" onclick="currentOprtn = 'div'">
+            <i class="fas fa-divide"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-container">
+      <button class="ui-btn" onclick="hint()">
+        <i class="fas fa-eye"></i>
+      </button>
+      <div class="solution" style="visibility: hidden;">
+        <div class="hint-header">Hints</div>
+        <div class="hint"></div>
+        <div class="hint" style="line-height: 0;"></div>
+        <div class="hint" style="line-height: 0;"></div>
+        <div class="show-another" onclick="showHint()">Show another</div>
+      </div>
+    </div>
+
+    <script src="num-calculator.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

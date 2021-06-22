@@ -1,0 +1,244 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr 1fr 1fr;
+  height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  background-color: transparent;
+  font-size: inherit;
+}
+
+button:focus, button:active {
+  outline: none;
+}
+
+.page-container > .goal-num-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page-container > .goal-num-container > .goal-num-text {
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.page-container > .goal-num-container > .goal-num {
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 4em;
+  text-align: center;
+  font-family: inherit;
+  width: 2em;
+  border-radius: 5px;
+}
+
+.page-container > .goal-num-container > .goal-num:active,
+.page-container > .goal-num-container > .goal-num:focus {
+  outline: none;
+  border: 1px solid #3a3a3a;
+}
+
+.page-container > .number-btn-container {
+  width: 71vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3em;
+}
+
+.page-container > .number-btn-container > .num-btn {
+  width: 2.5em;
+  height: 2.5em;
+  border: 1px solid #bebebe;
+  border-radius: 4px;
+  transition: 0.1s ease-in-out;
+}
+
+.page-container > .number-btn-container > .current-result {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 1.5em;
+}
+
+.page-container > .number-btn-container > .active-nb {
+  border: 1px solid #575757;
+  cursor: pointer;
+}
+
+.page-container > .number-btn-container > .active-nb:hover {
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 0px 23px 3px rgba(0,0,0,0.46); 
+  box-shadow: 0px 0px 23px 3px rgba(0,0,0,0.46);
+}
+
+.page-container > .arithmetic-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.page-container > .arithmetic-btn-container > .arith-btns {
+  width: 35vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.page-container > .arithmetic-btn-container > .arith-btns > .arithmetic-btn {
+  border: 1px solid #1dddff;
+  background-color: #1dddff;
+  border-radius: 100%;
+  font-size: 2.5em;
+  width: 1.6em;
+  height: 1.6em;
+  font-weight: 600;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.page-container > .arithmetic-btn-container > .arith-btns > .arithmetic-btn:hover {
+  border: 1px solid #008ca5;
+  background-color: #008ca5;
+}
+
+.page-container > .solution-container {
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  
+}
+
+.page-container > .solution-container > .solution-text {
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.page-container > .crumb-trail-container {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.2em;
+}
+
+.page-container > .crumb-trail-container > .crumb-header {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.movement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movement > .buttons button,
+.solution-container button {
+  border: 1px solid #ececec;
+  background-color: #ececec;
+  width: 3.4em;
+  height: 3.4em;
+  border-radius: 100%;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.movement > .buttons button {
+  margin-right: 10px;
+}
+
+.movement > .buttons button:hover,
+.solution-container > .ui-btn:hover {
+  border: 1px solid #c5c5c5;
+  background-color: #c5c5c5;
+}
+
+.movement > .buttons button i,
+.solution-container > .ui-btn i {
+  font-size: 1.2em;
+}
+
+.win {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  font-size: 2em;
+  margin: 25px;
+  padding: 25px;
+  font-weight: 600;
+  background-color: #1dddff7d;
+  border-radius: 8px;
+  visibility: hidden;
+}
+
+.solution-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+}
+
+.solution-container > .solution {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+
+.solution-container > .solution > .show-another {
+  background-color: transparent;
+  border: none;
+  color: #1dddff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.solution-container > .solution > .show-another:hover {
+  color: #008ca5;
+}
+
+.solution-container > .solution > .hint-header {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}

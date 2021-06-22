@@ -1,0 +1,22 @@
+IDEA: have a game.js with our current stuff,
+and then a intro-screen.js which lets them choose a number and
+all that good stuff?
+
+intro-screen.js could just update the innerHTML value for
+the goal-num div, and then game.js could read it right
+off of there so we wouldn't have to import/export
+any vars between files
+
+Link up keyboard controls? (r = redo, enter = next, 1 = first num...)
+
+Finished:
+
+- Redo button
+
+suggestion from my dad (Jon): add a crumb trail to show
+what's been happening (e.g. 27 - 4 = 23 * 6 = 1231231231...)
+
+- disable the hover effect and grey the border when btn inactive
+
+- check if the num = the goal num at the end
+  - and if not, say "you lost" and reset the numbers to enables so you can try again at the same puzzle
